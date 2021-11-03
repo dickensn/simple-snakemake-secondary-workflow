@@ -1,0 +1,18 @@
+name: fastqc
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - fastqc=0.11.9=hdfd78af_1
+  - font-ttf-dejavu-sans-mono=2.37=h6964260_0
+  - fontconfig=2.13.1=ha9ee91d_0
+  - freetype=2.10.4=ha233b18_0
+  - icu=58.2=h0a44026_3
+  - libcxx=10.0.0=1
+  - libiconv=1.16=h1de35cc_0
+  - libpng=1.6.37=ha441bb4_0
+  - libxml2=2.9.12=hcdb78fc_0
+  - openjdk=11.0.6=h7bc2e8c_1
+  - perl=5.26.2=h4e221da_0
+  - xz=5.2.5=h1de35cc_0
+  - zlib=1.2.11=h1de35cc_3

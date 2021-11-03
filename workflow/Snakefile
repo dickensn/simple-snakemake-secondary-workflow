@@ -1,0 +1,11 @@
+# config
+configfile: "config/config.yaml"
+
+# includes
+include: "rules/fastqc.smk"
+include: "rules/trim_galore.smk"
+include: "rules/bowtie2.smk"
+
+rule all:
+    input:
+        expand("results/{FILE}.bam", FILE=config["FILES"])

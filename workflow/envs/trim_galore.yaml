@@ -1,0 +1,6 @@
+name: trim_galore
+channels:
+ - bioconda
+ - defaults
+dependencies:
+ - trim-galore=0.6.7
