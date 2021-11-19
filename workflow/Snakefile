@@ -12,12 +12,12 @@ include: "rules/bowtie2.smk"
 
 rule all:
     input:
-        "results/done.txt"
+        config["RESULTPATH"] + "/done.txt"
 
 rule done:
     input:
-        expand("results/{FILE}.bam", FILE=config["FILES"])
+        expand(config["RESULTPATH"] + "/{FILE}.bam", FILE=config["FILES"])
     output:
-        "results/done.txt"
+        config["RESULTPATH"] + "/done.txt"
     shell:
         "echo Done > {output[0]}"

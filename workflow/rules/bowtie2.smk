@@ -2,8 +2,10 @@ import multiprocessing
 
 rule bowtie2:
     input:
-        "results/{FILE}_1_val_1.fq.gz",
-        "results/{FILE}_2_val_2.fq.gz",
+        config["RESULTPATH"] + "/{FILE}_1_val_1.fq.gz",
+        config["RESULTPATH"] + "/{FILE}_2_val_2.fq.gz",
+        config["RESULTPATH"] + "/{FILE}_1_val_1_fastqc.html",
+        config["RESULTPATH"] + "/{FILE}_2_val_2_fastqc.html",
         "resources/" + config["REFTAG"] + ".1.bt2",
         "resources/" + config["REFTAG"] + ".2.bt2",
         "resources/" + config["REFTAG"] + ".3.bt2",
@@ -11,7 +13,7 @@ rule bowtie2:
         "resources/" + config["REFTAG"] + ".rev.1.bt2",
         "resources/" + config["REFTAG"] + ".rev.2.bt2"
     output:
-        "results/{FILE}.bam"
+        config["RESULTPATH"] + "/{FILE}.bam"
     conda:
         "../envs/bowtie2.yaml"
     params:

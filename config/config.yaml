@@ -2,3 +2,7 @@ FILES:
   - SRR030257_10K
 REFTAG:
   NC_012967.1
+RESULTPATH:
+  results
+RESOURCEPATH:
+  s3://nick-data-dub/simple-snakemake-secondary-workflow/test/resources
