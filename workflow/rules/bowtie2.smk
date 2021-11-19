@@ -4,12 +4,12 @@ rule bowtie2:
     input:
         "results/{FILE}_1_val_1.fq.gz",
         "results/{FILE}_2_val_2.fq.gz",
-        "results/" + config["REFTAG"] + ".1.bt2",
-        "results/" + config["REFTAG"] + ".2.bt2",
-        "results/" + config["REFTAG"] + ".3.bt2",
-        "results/" + config["REFTAG"] + ".4.bt2",
-        "results/" + config["REFTAG"] + ".rev.1.bt2",
-        "results/" + config["REFTAG"] + ".rev.2.bt2"
+        "resources/" + config["REFTAG"] + ".1.bt2",
+        "resources/" + config["REFTAG"] + ".2.bt2",
+        "resources/" + config["REFTAG"] + ".3.bt2",
+        "resources/" + config["REFTAG"] + ".4.bt2",
+        "resources/" + config["REFTAG"] + ".rev.1.bt2",
+        "resources/" + config["REFTAG"] + ".rev.2.bt2"
     output:
         "results/{FILE}.bam"
     conda:
@@ -30,14 +30,14 @@ rule bowtie2:
 
 rule bowtie2_index:
     input:
-        "data/" + config["REFTAG"] +".fa"
+        "resources/" + config["REFTAG"] +".fa"
     output:
-        "results/" + config["REFTAG"] + ".1.bt2",
-        "results/" + config["REFTAG"] + ".2.bt2",
-        "results/" + config["REFTAG"] + ".3.bt2",
-        "results/" + config["REFTAG"] + ".4.bt2",
-        "results/" + config["REFTAG"] + ".rev.1.bt2",
-        "results/" + config["REFTAG"] + ".rev.2.bt2",
+        "resources/" + config["REFTAG"] + ".1.bt2",
+        "resources/" + config["REFTAG"] + ".2.bt2",
+        "resources/" + config["REFTAG"] + ".3.bt2",
+        "resources/" + config["REFTAG"] + ".4.bt2",
+        "resources/" + config["REFTAG"] + ".rev.1.bt2",
+        "resources/" + config["REFTAG"] + ".rev.2.bt2",
     conda:
         "../envs/bowtie2.yaml"
     params:

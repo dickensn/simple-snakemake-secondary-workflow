@@ -1,7 +1,7 @@
 rule trim_reads:
     input:
-        "data/{FILE}_1.fastq.gz",
-        "data/{FILE}_2.fastq.gz"
+        "{FILE}_1.fastq.gz",
+        "{FILE}_2.fastq.gz"
     output:
         "results/{FILE}_1_val_1.fq.gz",
         "results/{FILE}_2_val_2.fq.gz"
