@@ -6,6 +6,18 @@ include: "rules/fastqc.smk"
 include: "rules/trim_galore.smk"
 include: "rules/bowtie2.smk"
 
+# rule all:
+#     input:
+#         expand("results/{FILE}.bam", FILE=config["FILES"])
+
 rule all:
     input:
+        "results/done.txt"
+
+rule done:
+    input:
         expand("results/{FILE}.bam", FILE=config["FILES"])
+    output:
+        "results/done.txt"
+    shell:
+        "echo Done > {output[0]}"
