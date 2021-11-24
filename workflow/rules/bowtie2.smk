@@ -4,14 +4,14 @@ rule bowtie2:
     input:
         config["RESULTPATH"] + "/{FILE}_1_val_1.fq.gz",
         config["RESULTPATH"] + "/{FILE}_2_val_2.fq.gz",
-        config["RESULTPATH"] + "/{FILE}_1_val_1_fastqc.html",
-        config["RESULTPATH"] + "/{FILE}_2_val_2_fastqc.html",
         "resources/" + config["REFTAG"] + ".1.bt2",
         "resources/" + config["REFTAG"] + ".2.bt2",
         "resources/" + config["REFTAG"] + ".3.bt2",
         "resources/" + config["REFTAG"] + ".4.bt2",
         "resources/" + config["REFTAG"] + ".rev.1.bt2",
-        "resources/" + config["REFTAG"] + ".rev.2.bt2"
+        "resources/" + config["REFTAG"] + ".rev.2.bt2",
+        config["RESULTPATH"] + "/{FILE}_1_val_1_fastqc.html",
+        config["RESULTPATH"] + "/{FILE}_2_val_2_fastqc.html"
     output:
         config["RESULTPATH"] + "/{FILE}.bam"
     conda:
